@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnrw1vx816ow4"]
+[gd_scene load_steps=6 format=3 uid="uid://bnrw1vx816ow4"]
 
 [ext_resource type="Texture2D" uid="uid://cg2mamemrkrnk" path="res://Pixel Adventure 1/Free/Background/Blue.png" id="1_55jwd"]
 [ext_resource type="TileSet" uid="uid://cvhy57hkoitx5" path="res://main.tres" id="2_sc3t1"]
 [ext_resource type="PackedScene" uid="uid://bdeoqsoqv55x8" path="res://scenes/player.tscn" id="3_ujjpi"]
 [ext_resource type="PackedScene" uid="uid://dseu1s064bg66" path="res://area_2d.tscn" id="4_x3dnl"]
+[ext_resource type="PackedScene" uid="uid://lk5ukspopj4k" path="res://start_line.tscn" id="5_hrh86"]
 
 [node name="Node" type="Node"]
 
@@ -29,7 +30,11 @@ layer_0/tile_data = PackedInt32Array(655356, 786432, 5, 655357, 851968, 4, 65535
 position = Vector2(1073, 654)
 
 [node name="Player" parent="." instance=ExtResource("3_ujjpi")]
-position = Vector2(54, 89)
+position = Vector2(48, 97)
 motion_mode = 1
 
+[node name="StartLine" parent="." instance=ExtResource("5_hrh86")]
+position = Vector2(50, 82)
+
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="StartLine" to="Player" method="_on_start_line_body_entered"]

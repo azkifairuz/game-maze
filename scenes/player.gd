@@ -5,7 +5,7 @@ const VERTICAL_SPEED = 200.0  # Kecepatan naik/turun
 const JUMP_VELOCITY = -900.0  # Anda masih bisa menggunakannya jika perlu
 
 @onready var sprite_2d = $Sprite2D
-
+@onready var spriteStartLine = $"../StartLine/AnimatedSprite2D"
 func _physics_process(delta: float) -> void:
 	# Animasi
 	if (velocity.x > 1 || velocity.x < -1):
@@ -40,3 +40,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		print("Finish line reached!")
 		get_tree().change_scene_to_file("res://scenes/finish.tscn")
+
+
+func _on_start_line_body_entered(body: Node2D) -> void:
+	print("start")
+	if body.is_in_group("player"):
+		spriteStartLine.animation = "moving"
