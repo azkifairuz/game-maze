@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnrw1vx816ow4"]
 
-[ext_resource type="Texture2D" uid="uid://cg2mamemrkrnk" path="res://Pixel Adventure 1/Free/Background/Blue.png" id="1_55jwd"]
+[ext_resource type="Texture2D" uid="uid://evr0xmo1h083" path="res://orig.png" id="1_o2xqw"]
 [ext_resource type="TileSet" uid="uid://cvhy57hkoitx5" path="res://main.tres" id="2_sc3t1"]
 [ext_resource type="PackedScene" uid="uid://bdeoqsoqv55x8" path="res://scenes/player.tscn" id="3_ujjpi"]
 [ext_resource type="PackedScene" uid="uid://dseu1s064bg66" path="res://area_2d.tscn" id="4_x3dnl"]
@@ -15,8 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_55jwd")
-stretch_mode = 1
+texture = ExtResource("1_o2xqw")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

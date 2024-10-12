@@ -1,6 +1,81 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkjwnhaag7ewu"]
+[gd_scene load_steps=14 format=3 uid="uid://dkjwnhaag7ewu"]
 
-[ext_resource type="Texture2D" uid="uid://43o2px1pc64b" path="res://Pixel Adventure 1/Free/Background/Gray.png" id="1_4c1ah"]
+[ext_resource type="Texture2D" uid="uid://evr0xmo1h083" path="res://orig.png" id="1_awtxc"]
+[ext_resource type="FontFile" uid="uid://ofirjs1vaade" path="res://Pixel Adventure 1/Free/Menu/Text/Xolonium-Regular.ttf" id="2_vtpuq"]
+[ext_resource type="Texture2D" uid="uid://8p5wmgvtbswh" path="res://Pixel Adventure 1/Free/Items/Checkpoints/End/End (Idle).png" id="3_g3iag"]
+[ext_resource type="Texture2D" uid="uid://bvc7hpy4mb6p0" path="res://Pixel Adventure 1/Free/Items/Checkpoints/End/End (Pressed) (64x64).png" id="4_1atv5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02fj1"]
+atlas = ExtResource("4_1atv5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y15ub"]
+atlas = ExtResource("4_1atv5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4bqu"]
+atlas = ExtResource("4_1atv5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrhdh"]
+atlas = ExtResource("4_1atv5")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm03r"]
+atlas = ExtResource("4_1atv5")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxc03"]
+atlas = ExtResource("4_1atv5")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogpln"]
+atlas = ExtResource("4_1atv5")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le0w0"]
+atlas = ExtResource("4_1atv5")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5u21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g3iag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02fj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y15ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4bqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrhdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm03r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxc03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogpln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le0w0")
+}],
+"loop": true,
+"name": &"presed",
+"speed": 20.0
+}]
 
 [node name="Node" type="Node"]
 
@@ -11,8 +86,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_4c1ah")
-stretch_mode = 1
+texture = ExtResource("1_awtxc")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -20,13 +94,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.5
-offset_top = -11.5
-offset_right = 140.5
-offset_bottom = 11.5
+offset_left = -473.0
+offset_top = -70.0
+offset_right = 525.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vtpuq")
 theme_override_font_sizes/font_size = 57
 text = "selamat anda sudah berhasil keluar!"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(586, 383)
+sprite_frames = SubResource("SpriteFrames_d5u21")
+animation = &"presed"
+autoplay = "presed"
+frame_progress = 0.231344
