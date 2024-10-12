@@ -35,8 +35,8 @@ func _physics_process(delta: float) -> void:
 	if velocity.y != 0:
 		sprite_2d.animation = "jumping"  # Misalnya, Anda dapat menggunakan animasi "jumping" untuk naik/turun
 
-
-func _on_Area2D_body_entered(body):
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("Finish line reached!")
 	if body.is_in_group("player"):
 		print("Finish line reached!")
-		get_tree().change_scene("res://scenes/finish.tscn")
+		get_tree().change_scene_to_file("res://scenes/finish.tscn")

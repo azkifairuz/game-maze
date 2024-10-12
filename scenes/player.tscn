@@ -190,7 +190,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4s187"]
 size = Vector2(30.5, 36)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_3jh6e")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
